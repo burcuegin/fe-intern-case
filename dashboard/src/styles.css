@@ -1,0 +1,119 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Bootstrap Icons kullanmak için aşağıdaki satırı index.html <head> içine ekleyin:
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+*/
+
+body, html {
+  background-color: #F6F6F6 !important;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+body.dark-mode {
+  background: #181A20 !important;
+  color: #f5f6fa !important;
+}
+body.dark-mode .main-content-wrapper {
+  background: #23272F !important;
+  color: #f5f6fa !important;
+  box-shadow: none;
+}
+body.dark-mode .sidebar-bg {
+  background: #181A20 !important;
+  color: #f5f6fa !important;
+  border-right: 1px solid #23272F;
+}
+body.dark-mode .sidebar-link, body.dark-mode .sidebar-title {
+  color: #f5f6fa !important;
+}
+body.dark-mode .sidebar-link.active, body.dark-mode .sidebar-link:active {
+  background: #23272F !important;
+  color: #ffd600 !important;
+  border-left: 4px solid #ffd600;
+}
+body.dark-mode .card, body.dark-mode .stat-card {
+  background: #23272F !important;
+  color: #f5f6fa !important;
+  box-shadow: none;
+}
+body.dark-mode .table {
+  background: #23272F !important;
+  color: #f5f6fa !important;
+}
+body.dark-mode .table th, body.dark-mode .table td {
+  background: #23272F !important;
+  color: #f5f6fa !important;
+}
+body.dark-mode .btn, body.dark-mode .btn-primary, body.dark-mode .btn-outline-secondary {
+  background: #23272F !important;
+  color: #ffd600 !important;
+  border-color: #ffd600 !important;
+}
+body.dark-mode .btn-primary {
+  background: #ffd600 !important;
+  color: #23272F !important;
+  border: none !important;
+}
+
+.main-content-wrapper {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+  min-height: 0;
+}
+
+.pagination {
+  margin-top: 1.2rem;
+}
+
+.dashboard-root {
+  min-height: 100vh;
+  background: #F6F6F6;
+}
+.sidebar-bg {
+  min-width: 240px;
+  max-width: 260px;
+  background: #F6F6F6;
+  border-right: 1px solid #e5e5e5;
+}
+@media (max-width: 991px) {
+  .sidebar-bg {
+    display: none;
+  }
+  .main-content-wrapper {
+    max-width: 390px;
+    margin: 0 auto;
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .main-content-wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .main-content-wrapper {
+    max-width: 670px;
+    margin: 0 auto;
+    padding-bottom: 30px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

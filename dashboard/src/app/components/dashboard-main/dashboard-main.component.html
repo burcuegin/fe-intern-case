@@ -1,0 +1,86 @@
+<div class="stat-flex mb-4">
+  <div class="stat-card text-center position-relative overflow-hidden card-animate"
+       *ngFor="let stat of stats; let i = index"
+       [style.animationDelay]="getCardAnimationDelay(i)">
+    <div class="stat-icon mb-2 icon-bounce">
+      <i [ngClass]="[
+        i === 0 ? 'bi bi-box-seam' :
+        i === 1 ? 'bi bi-plus-circle' :
+        i === 2 ? 'bi bi-bag-check' :
+        i === 3 ? 'bi bi-credit-card' :
+        'bi bi-x-circle']"></i>
+    </div>
+    <div class="card-body p-3">
+      <div class="stat-title">{{stat.title}}</div>
+      <div class="stat-value" #statValue></div>
+      <div class="stat-change stat-animate stat-pulse" [ngClass]="{'text-success': stat.change > 0, 'text-danger': stat.change < 0}">
+        <i *ngIf="stat.change > 0" class="bi bi-arrow-up"></i>
+        <i *ngIf="stat.change < 0" class="bi bi-arrow-down"></i>
+        {{stat.change > 0 ? '+' : ''}}{{stat.change}}%
+      </div>
+      <!-- Mini Sparkline -->
+      <svg width="100%" height="28" viewBox="0 0 80 28" class="mt-2">
+        <polyline
+          [attr.points]="getTrendString(stat)"
+          fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          style="filter: drop-shadow(0 1px 2px #2563eb33)"/>
+        <circle *ngFor="let v of stat.trend; let idx = index" [attr.cx]="idx * 26" [attr.cy]="getNormalizedValue(v, stat)" r="2.5" fill="#60a5fa"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<!-- Tablo Üstü Arama ve Filtre -->
+<div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2 flex-nowrap-overflow">
+  <div class="d-flex align-items-center gap-2 flex-grow-1">
+    <input class="form-control form-control-sm w-auto flex-grow-1" style="min-width: 120px; max-width: 220px;" type="search" placeholder="Search here">
+    <button class="btn btn-light btn-sm"><i class="bi bi-funnel"></i></button>
+    <button class="btn btn-light btn-sm"><i class="bi bi-sliders"></i></button>
+  </div>
+  <button class="btn btn-primary btn-sm mt-2 mt-md-0"><i class="bi bi-plus-lg me-1"></i> Add New Product</button>
+</div>
+<!-- Ürünler Tablosu -->
+<div class="card shadow-sm">
+  <div class="card-body p-0 table-responsive">
+    <table class="table table-hover align-middle mb-0 table-striped zebra-table">
+      <thead class="table-light">
+        <tr>
+          <th>Product</th>
+          <th class="d-none d-md-table-cell">Transaction ID</th>
+          <th class="d-none d-lg-table-cell">Date</th>
+          <th class="d-none d-lg-table-cell">Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; let idx = index" [ngClass]="{'zebra-row': idx % 2 === 1}">
+          <td>
+            <div class="avatar-wrapper">
+              <img src="https://via.placeholder.com/32x32?text=P" class="rounded me-2 avatar-img" width="32" height="32" alt="product">
+            </div>
+            {{product.name}}
+          </td>
+          <td class="d-none d-md-table-cell">{{product.transactionId}}</td>
+          <td class="d-none d-lg-table-cell">{{product.date}}</td>
+          <td class="d-none d-lg-table-cell">{{product.price | currency}}</td>
+          <td>
+            <span [ngClass]="{
+              'badge badge-animate bg-success': product.status === 'Completed',
+              'badge badge-animate bg-danger': product.status === 'Cancelled',
+              'badge badge-animate bg-warning text-dark': product.status === 'Pending'
+            }">
+              {{product.status}}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pagination -->
+    <nav class="d-flex justify-content-end p-3">
+      <ul class="pagination pagination-sm mb-0">
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

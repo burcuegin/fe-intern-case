@@ -1,0 +1,73 @@
+.navbar {
+  min-height: 64px;
+}
+
+@media (max-width: 768px) {
+  form {
+    display: none !important;
+  }
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 68px;
+  height: 36px;
+}
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.theme-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #e0e0e0;
+  border-radius: 34px;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.theme-switch .sun,
+.theme-switch .moon {
+  font-size: 1.5em;
+}
+.theme-switch input:checked + .slider {
+  background: #23272F;
+}
+.theme-switch .slider:before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  width: 26px;
+  height: 26px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+.theme-switch input:checked + .slider:before {
+  transform: translateX(32px);
+  background: #FFD600;
+}
+
+.notif-badge {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #e6ff5a;
+  color: #222;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}

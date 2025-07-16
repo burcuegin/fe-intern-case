@@ -1,0 +1,89 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 sidebar-bg min-vh-100">
+  <div class="mb-4 d-flex align-items-center">
+    <img src="https://ui-avatars.com/api/?name=Master+POS&background=0D8ABC&color=fff&size=32" alt="logo" class="rounded-circle me-2" width="32" height="32">
+    <span class="fw-bold fs-5 text-white">master <span class="text-primary">POS</span></span>
+  </div>
+  <div class="sidebar-section mb-2">
+    <span class="sidebar-title">MAIN MENU</span>
+    <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item mb-1">
+        <a href="#" class="nav-link active sidebar-link"><img src="assets/vector/maınmenu/dashboard.png" width="20" height="20" class="me-2" alt="Dashboard"> Dashboard</a>
+      </li>
+      <li class="nav-item mb-1">
+        <a href="javascript:void(0)" class="nav-link sidebar-link d-flex justify-content-between align-items-center" (click)="toggleProducts()">
+          <span><img src="assets/vector/maınmenu/products.svg" width="20" height="20" class="me-2" alt="Products"> Products</span>
+          <i class="bi" [ngClass]="openProducts ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+        </a>
+        <ul class="nav flex-column ms-4 collapse-list" [class.show]="openProducts">
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/all.products.svg" width="20" height="20" class="me-2" alt="All Products"> All Products</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/addnew.products.svg" width="20" height="20" class="me-2" alt="Add New Product"> Add New Product</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/tags.svg" width="20" height="20" class="me-2" alt="Tags"> Tags</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/categories.svg" width="20" height="20" class="me-2" alt="Categories"> Categories</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/sub.categori.svg" width="20" height="20" class="me-2" alt="Sub Category"> Sub Category</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/scan.barkod.svg" width="20" height="20" class="me-2" alt="Scan Barcode"> Scan Barcode</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/maınmenu/import.products).svg" width="20" height="20" class="me-2" alt="Import Products"> Import Products</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-section mb-2">
+    <span class="sidebar-title">ANALYTICS</span>
+    <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item mb-1">
+        <a href="javascript:void(0)" class="nav-link sidebar-link d-flex justify-content-between align-items-center" (click)="toggleAnalytics()">
+          <span><img src="assets/vector/analitik/Vector.svg" width="20" height="20" class="me-2" alt="Analytics"> Analytics</span>
+          <i class="bi" [ngClass]="openAnalytics ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+        </a>
+        <ul class="nav flex-column ms-4 collapse-list" [class.show]="openAnalytics">
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector.svg" width="20" height="20" class="me-2" alt="Sales"> Sales</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (1).svg" width="20" height="20" class="me-2" alt="Point of Sales"> Point of Sales</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (2).svg" width="20" height="20" class="me-2" alt="Leaderboards"> Leaderboards</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (3).svg" width="20" height="20" class="me-2" alt="Orders"> Orders</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (4).svg" width="20" height="20" class="me-2" alt="Refund"> Refund</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (5).svg" width="20" height="20" class="me-2" alt="Taxes"> Taxes</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/analitik/Vector (6).svg" width="20" height="20" class="me-2" alt="Stock"> Stock</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-section mb-2">
+    <span class="sidebar-title">APPS</span>
+    <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item mb-1">
+        <a href="javascript:void(0)" class="nav-link sidebar-link d-flex justify-content-between align-items-center" (click)="toggleApps()">
+          <span><img src="assets/vector/apps/Vector.svg" width="20" height="20" class="me-2" alt="Apps"> Apps</span>
+          <i class="bi" [ngClass]="openApps ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+        </a>
+        <ul class="nav flex-column ms-4 collapse-list" [class.show]="openApps">
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/apps/Vector.svg" width="20" height="20" class="me-2" alt="Chat"> Chat</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/apps/Vector (1).svg" width="20" height="20" class="me-2" alt="Calendar"> Calendar</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/apps/Vector (2).svg" width="20" height="20" class="me-2" alt="Email"> Email</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-section">
+    <span class="sidebar-title">SETTINGS</span>
+    <ul class="nav nav-pills flex-column mb-2">
+      <li class="nav-item mb-1">
+        <a href="javascript:void(0)" class="nav-link sidebar-link d-flex justify-content-between align-items-center" (click)="toggleSettings()">
+          <span><img src="assets/vector/settings/Vector.svg" width="20" height="20" class="me-2 sidebar-icon-anim" alt="Settings"> Settings</span>
+          <i class="bi" [ngClass]="openSettings ? 'bi-chevron-up' : 'bi-chevron-down'"></i>
+        </a>
+        <ul class="nav flex-column ms-4 collapse-list" [class.show]="openSettings">
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/settings/Vector.svg" width="20" height="20" class="me-2 sidebar-icon-anim" alt="Settings"> Settings</a></li>
+          <li class="nav-item mb-1"><a href="#" class="nav-link sidebar-link"><img src="assets/vector/settings/Vector (1).svg" width="20" height="20" class="me-2 sidebar-icon-anim" alt="Log Out"> Log Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- Kullanıcı Kartı -->
+  <div class="sidebar-user-card d-flex align-items-center gap-2 mt-auto p-3">
+    <img src="https://ui-avatars.com/api/?name=Burcu+Egin&background=2563eb&color=fff&size=36" class="rounded-circle user-avatar-glow" width="36" height="36" alt="User">
+    <div class="flex-grow-1">
+      <div class="fw-bold text-white">Burcu Egin</div>
+      <div class="text-secondary" style="font-size:0.9em;">Admin</div>
+    </div>
+    <button class="btn btn-outline-light btn-sm ms-2"><i class="bi bi-box-arrow-right"></i></button>
+  </div>
+</div>
