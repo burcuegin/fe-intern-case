@@ -1,36 +1,65 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-3">
-  <button class="btn btn-link d-md-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
-    <i class="bi bi-list fs-2"></i>
+  <!-- Mobile Menu Toggle -->
+  <button class="navbar-toggler d-md-none" type="button" (click)="toggleMobileMenu()">
+    <i class="bi bi-list"></i>
   </button>
-  <a class="navbar-brand fw-bold" href="#" style="font-size:1.3rem;">LOGO</a>
-  <form class="d-none d-md-flex ms-3 w-50">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  </form>
-  <ul class="navbar-nav ms-auto align-items-center gap-3">
-    <li class="nav-item">
-      <img src="assets/vector/Vector.svg" width="24" height="24" alt="Language">
-    </li>
-    <li class="nav-item position-relative">
-      <img src="assets/vector/Vector (1).svg" width="24" height="24" alt="Notifications">
+  
+  <!-- Page Title Section -->
+  <div class="page-title-section">
+    <h1 class="page-title">Products</h1>
+    <p class="page-subtitle">Manage your products</p>
+  </div>
+  
+  <div class="flex-grow-1"></div>
+  
+  <div class="navbar-nav ms-auto align-items-center gap-3">
+    <!-- Dark Mode Toggle -->
+    <div class="nav-item">
+      <div class="theme-toggle">
+        <i class="bi bi-sun-fill light-icon"></i>
+        <label class="toggle-switch">
+          <input type="checkbox" id="theme-toggle" (change)="toggleTheme()">
+          <span class="toggle-slider"></span>
+        </label>
+        <i class="bi bi-moon-fill dark-icon"></i>
+      </div>
+    </div>
+    
+    <!-- Vertical Separator -->
+    <div class="nav-item">
+      <div class="nav-separator"></div>
+    </div>
+    
+    <!-- Globe Icon -->
+    <div class="nav-item">
+      <img src="assets/vector/settings/navigasyon ikonlar/Vector.svg" width="20" height="20" alt="Globe">
+    </div>
+    
+    <!-- Bell Icon with Notification -->
+    <div class="nav-item position-relative">
+      <img src="assets/vector/settings/navigasyon ikonlar/Vector (1).svg" width="20" height="20" alt="Notifications">
       <span class="notif-badge">12</span>
-    </li>
-    <li class="nav-item">
-      <img src="assets/vector/Vector (2).svg" width="24" height="24" alt="Mail">
-    </li>
-    <li class="nav-item">
-      <img src="assets/vector/Vector (3).svg" width="24" height="24" alt="Settings">
-    </li>
-    <li class="nav-item mx-2">
-      <label class="theme-switch">
-        <input type="checkbox" [checked]="isDarkMode" (change)="toggleTheme()">
-        <span class="slider">
-          <i class="bi bi-sun-fill sun"></i>
-          <i class="bi bi-moon-fill moon"></i>
-        </span>
-      </label>
-    </li>
-    <li class="nav-item mx-2">
-      <a class="nav-link" href="#"><i class="bi bi-person-circle fs-5"></i></a>
-    </li>
-  </ul>
+    </div>
+    
+    <!-- Envelope Icon -->
+    <div class="nav-item">
+      <img src="assets/vector/settings/navigasyon ikonlar/Vector (2).svg" width="20" height="20" alt="Email">
+    </div>
+    
+    <!-- Settings Icon -->
+    <div class="nav-item">
+      <img src="assets/vector/settings/navigasyon ikonlar/Vector (3).svg" width="20" height="20" alt="Settings">
+    </div>
+    
+    <!-- User Profile -->
+    <div class="nav-item d-flex align-items-center gap-2">
+      <img src="assets/vector/products sol ikon.svg" 
+           width="36" height="36" class="rounded-circle" alt="User">
+      <div class="d-none d-md-block">
+        <div class="fw-bold text-dark" style="font-size: 0.9rem;">John Doe</div>
+        <div class="text-muted" style="font-size: 0.8rem;">Admin</div>
+      </div>
+      <i class="bi bi-chevron-down text-muted"></i>
+    </div>
+  </div>
 </nav>

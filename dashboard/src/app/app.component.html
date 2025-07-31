@@ -1,12 +1,9 @@
-<div class="dashboard-root d-flex">
-  <div class="sidebar-bg">
-    <app-sidebar></app-sidebar>
-    </div>
-  <div class="flex-grow-1 d-flex flex-column min-vh-100">
+<div class="dashboard-root">
+  <app-sidebar></app-sidebar>
+  <div class="sidebar-overlay"></div>
+  <div class="main-content-wrapper">
     <app-header></app-header>
-    <div class="main-content-wrapper flex-grow-1 p-4">
-      <app-dashboard-main></app-dashboard-main>
-    </div>
+    <app-dashboard-main></app-dashboard-main>
   </div>
 </div>
 
